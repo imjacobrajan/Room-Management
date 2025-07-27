@@ -6,7 +6,6 @@ import {
   Badge,
   Button,
   Drawer,
-  Space,
 } from "antd";
 import {
   UserOutlined,

@@ -51,7 +51,6 @@ const RoomFormModal: React.FC<RoomFormModalProps> = ({
   const [currentStep, setCurrentStep] = useState(0);
   const [loading, setLoading] = useState(false);
   const [branches, setBranches] = useState<any[]>([]);
-  const [floors, setFloors] = useState<any[]>([]);
   const [configOptions, setConfigOptions] = useState<any>({});
   const [fileList, setFileList] = useState<any[]>([]);
   const [packageRates, setPackageRates] = useState([
@@ -64,7 +63,6 @@ const RoomFormModal: React.FC<RoomFormModalProps> = ({
     watch,
     trigger,
     reset,
-    setValue,
     formState: { errors },
   } = useForm<RoomFormData>({
     resolver: zodResolver(roomValidationSchema),
@@ -99,14 +97,12 @@ const RoomFormModal: React.FC<RoomFormModalProps> = ({
 
   const loadConfigData = async () => {
     try {
-      const [branchesRes, floorsRes, optionsRes] = await Promise.all([
+      const [branchesRes, optionsRes] = await Promise.all([
         configService.getBranches(),
-        configService.getFloors(),
         configService.getConfigurableOptions(),
       ]);
 
       setBranches(branchesRes.data.data || []);
-      setFloors(floorsRes.data.data || []);
       setConfigOptions(optionsRes.data.data || {});
     } catch (error) {
       message.error("Failed to load configuration data");

@@ -9,8 +9,6 @@ import {
   Col,
   Empty,
   Spin,
-  Card,
-  Statistic,
 } from "antd";
 import {
   PlusOutlined,
@@ -38,7 +36,6 @@ const Dashboard: React.FC = () => {
   const [showFormModal, setShowFormModal] = useState(false);
   const [editingRoom, setEditingRoom] = useState<Room | null>(null);
   const [branches, setBranches] = useState<any[]>([]);
-  const [stats, setStats] = useState<any>(null);
   const [pagination, setPagination] = useState({
     current: 1,
     total: 0,
@@ -177,51 +174,6 @@ const Dashboard: React.FC = () => {
             </div>
           </div>
         </div>
-
-        {stats && (
-          <div className="mb-6">
-            <Row gutter={[16, 16]}>
-              <Col xs={24} sm={12} lg={6}>
-                <Card>
-                  <Statistic
-                    title="Total Rooms"
-                    value={stats.totalRooms}
-                    valueStyle={{ color: "#1890ff" }}
-                  />
-                </Card>
-              </Col>
-              <Col xs={24} sm={12} lg={6}>
-                <Card>
-                  <Statistic
-                    title="Available Rooms"
-                    value={stats.availableRooms}
-                    valueStyle={{ color: "#52c41a" }}
-                  />
-                </Card>
-              </Col>
-              <Col xs={24} sm={12} lg={6}>
-                <Card>
-                  <Statistic
-                    title="Occupied Rooms"
-                    value={stats.occupiedRooms}
-                    valueStyle={{ color: "#f5222d" }}
-                  />
-                </Card>
-              </Col>
-              <Col xs={24} sm={12} lg={6}>
-                <Card>
-                  <Statistic
-                    title="Average Rent"
-                    value={stats.averageRent}
-                    precision={0}
-                    prefix="₹"
-                    valueStyle={{ color: "#722ed1" }}
-                  />
-                </Card>
-              </Col>
-            </Row>
-          </div>
-        )}
 
         <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
           <Row gutter={[16, 16]} align="middle">
