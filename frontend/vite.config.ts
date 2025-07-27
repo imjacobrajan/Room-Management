@@ -5,12 +5,4 @@ import tailwindcss from "@tailwindcss/vite";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  server: {
-    proxy: {
-      "/api": {
-        target: "https://room-management-mtl1.onrender.com/",
-        changeOrigin: true,
-      },
-    },
-  },
 });

@@ -6,7 +6,7 @@ import type {
   ConfigOptions,
 } from "../types/room";
 
-const API_BASE_URL = "/api/v1";
+const API_BASE_URL = "https://room-management-mtl1.onrender.com/api/v1";
 
 const api = axios.create({
   baseURL: API_BASE_URL,
