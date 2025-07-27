@@ -1,1 +1,91 @@
 @import "tailwindcss";
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f5f5f5;
+}
+
+@theme {
+  --color-primary: #7580ff;
+}
+
+.ant-layout-header {
+  padding: 0 !important;
+  height: auto !important;
+  line-height: normal !important;
+}
+
+.ant-table-thead > tr > th {
+  background: #f8fafc !important;
+  font-weight: 600 !important;
+  border-bottom: 2px solid #e5e7eb !important;
+}
+
+.ant-card-hoverable:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  transform: translateY(-2px);
+  transition: all 0.3s ease-in-out;
+}
+
+.ant-table-wrapper .ant-table-pagination.ant-pagination {
+  margin-right: 20px !important;
+}
+
+.ant-steps-item-finish .ant-steps-item-icon {
+  background-color: white !important;
+  border-color: #7580ff !important;
+  color: white !important;
+}
+
+.ant-steps-item-process .ant-steps-item-icon {
+  background-color: #7580ff !important;
+  border-color: #7580ff !important;
+}
+
+.ant-upload-list-picture-card .ant-upload-list-item {
+  border-radius: 8px;
+}
+
+.ant-modal .ant-modal-header {
+  border-radius: 8px 8px 0 0;
+}
+
+.ant-btn {
+  border-radius: 6px;
+}
+
+.ant-input,
+.ant-select-selector,
+.ant-input-number {
+  border-radius: 6px;
+}
+
+@layer components {
+  .card-hover {
+    @apply hover:shadow-lg hover:-translate-y-1 transition-all duration-300;
+  }
+
+  .status-badge {
+    @apply px-2 py-1 rounded-full text-xs font-medium;
+  }
+
+  .loading-spinner {
+    @apply flex items-center justify-center p-8;
+  }
+}
+
+@media (max-width: 768px) {
+  .ant-table-scroll {
+    overflow-x: auto;
+  }
+
+  .ant-col {
+    margin-bottom: 16px;
+  }
+}

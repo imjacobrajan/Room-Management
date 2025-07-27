@@ -1,7 +1,6 @@
 import axios from "axios";
 import type {
   Room,
-  CreateRoomRequest,
   ApiResponse,
   RoomStats,
   ConfigOptions,
