@@ -13,6 +13,15 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.get("/", (req, res) => {
+  res.json({
+    message: "Room Management API Server",
+    status: "Running",
+    timestamp: new Date().toISOString(),
+    endpoints: ["/api/v1/rooms", "/api/v1/config"],
+  });
+});
+
 app.use("/api/v1", routes);
 
 mongoose
